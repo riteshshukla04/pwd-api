@@ -22,4 +22,4 @@ mongoose.connect(process.env.DB_CONNECT,
 
 
 app.use(express.json);
-app.listen(3000,()=>console.log("Yes Really alive"));
+app.listen(process.env.PORT || 3000, () => console.log("Server is running..."));
