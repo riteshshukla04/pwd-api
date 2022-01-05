@@ -9,8 +9,6 @@ const jwt=require('jsonwebtoken')
 const {ComplaintValidator}=require('../Validators/validation');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-
-const User = require('../model/User');
 const { response } = require('express');
 const { json } = require('body-parser');
 const verify=require('../Validators/token-validator');
