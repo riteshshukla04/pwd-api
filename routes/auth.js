@@ -51,7 +51,7 @@ router.post('/login',jsonParser,async (req,res)=>{
    
    const user = await User.findOne({email:req.body.email})
    if (!user){
-       return res.status(400).send("USername  wrong");
+       return res.status(400).send("Username  wrong");
    }
     const validpass=await bycrypt.compare(req.body.password,user.password);
     console.log(user.password)
@@ -59,7 +59,7 @@ router.post('/login',jsonParser,async (req,res)=>{
 
     if(!validpass) 
     {
-        return res.status(400).send("USername or password wrong");
+        return res.status(400).send("Username or password wrong");
     }
     const token=jwt.sign({user:user},process.env.TOKEN)
     res.header('auth-token',token).send(token);  
