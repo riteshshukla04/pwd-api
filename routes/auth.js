@@ -28,6 +28,7 @@ router.post('/register',jsonParser,async (req,res)=>{
         console.log(resp)
         return res.status(400).send("Already Exists");
     }
+    try{
     const salt=await bycrypt.genSalt(10);
     const hashedPassword=await bycrypt.hash(req.body.password,salt);
     const user=new User({
@@ -35,7 +36,7 @@ router.post('/register',jsonParser,async (req,res)=>{
         email:req.body.email,
         password:hashedPassword
     });
-    try{
+    
         const savedUser=await user.save();
         res.send(savedUser);
     }catch (err){
