@@ -63,7 +63,11 @@ router.post('/login',jsonParser,async (req,res)=>{
         return res.status(400).send("Username or password wrong");
     }
     const token=jwt.sign({user:user},process.env.TOKEN)
-    res.header('auth-token',token).send(token);  
+    const send_user={
+        token:token,
+        user:user,
+    }
+    res.header('auth-token',token).send(send_user);  
 }); 
 
 module.exports=router;
