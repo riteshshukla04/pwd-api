@@ -31,7 +31,12 @@ const complaintSchema=new mongoose.Schema(
         complaint:{
             type:String,
            
+        },
+        address:{
+            type:String,
+        
         }
+        
     }
 
 

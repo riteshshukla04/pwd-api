@@ -8,7 +8,8 @@ const ComplaintValidator=data=>{
         name:Joi.string().min(6).required(),
         phone:Joi.string().min(10).required().alphanum(),
         pincode:Joi.string().min(6).required(),
-        complaint:Joi.string().min(10).required()
+        complaint:Joi.string().min(10).required(),
+        address:Joi.string()
         
 
     });

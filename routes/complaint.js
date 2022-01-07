@@ -28,7 +28,8 @@ router.post('/add',jsonParser,verify,async(req,res)=>{
          name:req.body.name,
          phone:req.body.phone,
          pincode:req.body.pincode,
-         complaint:req.body.Complaint
+         complaint:req.body.Complaint,
+         address:req.body.address
     })
     try{
         const Savedcomplaint=await complaint.save();

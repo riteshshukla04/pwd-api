@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const dotenv=require('dotenv');
 const mongoose=require('mongoose');
+var cors = require('cors')
 dotenv.config();
 
 const authRoute=require('./routes/auth');
@@ -22,4 +23,5 @@ mongoose.connect(process.env.DB_CONNECT,
 
 
 app.use(express.json);
+app.use(cors());
 app.listen(process.env.PORT || 3000, () => console.log("Server is running..."));
