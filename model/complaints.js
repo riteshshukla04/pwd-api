@@ -38,6 +38,12 @@ const complaintSchema=new mongoose.Schema(
         },
         subCategory:{
             type:String,
+        },
+        remarks:{
+            type:String
+        },
+        isfrozen:{
+            type:Boolean
         }
         
     }
