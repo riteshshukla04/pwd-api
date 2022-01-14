@@ -35,6 +35,9 @@ const complaintSchema=new mongoose.Schema(
         address:{
             type:String,
         
+        },
+        subCategory:{
+            type:String,
         }
         
     }
