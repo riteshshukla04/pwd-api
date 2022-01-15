@@ -1,3 +1,4 @@
+const { string } = require('joi');
 const mongoose=require('mongoose');
 const complaintSchema=new mongoose.Schema(
     {
@@ -44,6 +45,9 @@ const complaintSchema=new mongoose.Schema(
         },
         isfrozen:{
             type:Boolean
+        },
+        timestamp:{
+            type:String
         }
         
     }
